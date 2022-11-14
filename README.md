@@ -1,1 +1,0 @@
-# shrimayeedatta.github.io
