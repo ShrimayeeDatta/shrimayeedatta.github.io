@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Portfolio website</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 
@@ -16,13 +18,18 @@
 	<div class="hero">
 		<nav>
 			<h2 class="logo">Portfo<span>lio</span></h2>
-			<ul>
+			<ul class="nav-menu" id="navMenu">
 				<li><a href="#">Home</a></li>
 				<li><a href="#about">About Me</a></li>
 				<li><a href="#click">Projects</a></li>
 				<li><a href="#connect">Connect</a></li>
 			</ul>
 			<a href="#" class="btn">Subscribe</a>
+			<div class="hamburger" id="hamburger">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
 		</nav>
 
 		<div class="content">
@@ -87,5 +94,23 @@
 		<p class="end">Created By Shivansh Dengla</p>
 	</footer>
     </div>
+
+	<script>
+		const hamburger = document.getElementById('hamburger');
+		const navMenu = document.getElementById('navMenu');
+
+		hamburger.addEventListener('click', () => {
+			hamburger.classList.toggle('active');
+			navMenu.classList.toggle('active');
+		});
+
+		// Close menu when clicking on a link
+		document.querySelectorAll('.nav-menu a').forEach(link => {
+			link.addEventListener('click', () => {
+				hamburger.classList.remove('active');
+				navMenu.classList.remove('active');
+			});
+		});
+	</script>
 </body>
 </html>
